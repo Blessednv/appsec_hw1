@@ -7,7 +7,8 @@ asan: giftcardreader.c giftcard.h
 	gcc -fsanitize=address -g -o giftcardreader.asan giftcardreader.c
 
 ubsan: giftcardreader.c giftcard.h
-	gcc -fsanitize=undefined -g -o giftcardreader.ubsan giftcardreader.c
+	gcc -fsanitize=undefined -ls
+g -o giftcardreader.ubsan giftcardreader.c
 
 test: giftcardreader asan ubsan
 	./runtests.sh
